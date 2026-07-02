@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no" />
+<title>Jateen Yadav — Junior Research Engineer, Hitachi India R&D</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#000000" />
+<meta name="description" content="Digital business card of Jateen Yadav, Junior Research Engineer, Hitachi India R&D." />
+
+<!-- iOS PWA support -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Jateen · Hitachi" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+
+<style>
+  :root{
+    --bg:#000000;
+    --card:#141414;
+    --line:#2a2a2a;
+    --text:#f5f5f7;
+    --muted:#a1a1aa;
+    --accent:#E4002B;      /* Hitachi Inspire Red */
+    --accent2:#ff3b5c;
+    --glow:0 0 40px rgba(228,0,43,.30);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{
+    background:radial-gradient(1200px 800px at 50% -10%, #2a0810 0%, var(--bg) 55%);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:calc(20px + env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom));
+  }
+  #bg{position:fixed;inset:0;z-index:0;opacity:.45;}
+  .card{
+    position:relative;z-index:1;
+    width:100%;max-width:400px;
+    background:linear-gradient(160deg, rgba(26,26,26,.94), rgba(8,8,8,.94));
+    border:1px solid var(--line);
+    border-radius:26px;
+    padding:0 0 26px;
+    overflow:hidden;
+    box-shadow:var(--glow), 0 20px 60px rgba(0,0,0,.6);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    animation:rise .8s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(26px) scale(.98);}to{opacity:1;transform:none;}}
+  /* Hitachi red header band */
+  .brandbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;
+    background:linear-gradient(90deg,var(--accent),#b0001f);
+    color:#fff;font-weight:800;font-size:15px;letter-spacing:.5px;
+  }
+  .brandbar .company{display:flex;flex-direction:column;line-height:1.05;}
+  .brandbar .company small{font-weight:600;font-size:10px;letter-spacing:2px;opacity:.9;text-transform:uppercase;}
+  .brandbar .tagline{font-size:10.5px;font-weight:600;font-style:italic;opacity:.95;letter-spacing:.3px;}
+  .body{padding:22px 26px 0;}
+  .top{display:flex;align-items:center;gap:16px;}
+  .avatar{
+    width:66px;height:66px;flex:none;border-radius:18px;
+    background:linear-gradient(135deg,var(--accent),#b0001f);
+    display:flex;align-items:center;justify-content:center;
+    font-size:26px;font-weight:800;color:#fff;letter-spacing:-1px;
+    box-shadow:0 8px 24px rgba(228,0,43,.45);
+  }
+  h1{font-size:24px;margin:0;letter-spacing:-.5px;line-height:1.1;}
+  .role{color:var(--accent2);font-weight:700;font-size:13.5px;margin-top:4px;letter-spacing:.3px;}
+  .sub{color:var(--muted);font-size:12px;margin-top:2px;letter-spacing:1.2px;text-transform:uppercase;}
+  .summary{color:#cfcfd6;font-size:12.5px;line-height:1.5;margin:16px 0 2px;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px;}
+  .tag{
+    font-size:11.5px;font-weight:600;padding:6px 11px;border-radius:999px;
+    background:rgba(228,0,43,.12);border:1px solid rgba(228,0,43,.4);color:#ffb3c0;
+  }
+  .qrwrap{
+    margin:20px auto 8px;background:#fff;border-radius:18px;padding:14px;
+    width:190px;height:190px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+  }
+  .qrwrap svg{width:100%;height:100%;}
+  .scan{text-align:center;color:var(--muted);font-size:12px;letter-spacing:.5px;margin-bottom:18px;}
+  .scan b{color:var(--text);}
+  .btns{display:flex;flex-direction:column;gap:11px;}
+  a.btn,button.btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    text-decoration:none;border:none;cursor:pointer;
+    font-size:15px;font-weight:700;padding:14px;border-radius:14px;
+    transition:transform .12s ease, filter .12s ease;font-family:inherit;
+  }
+  a.btn:active,button.btn:active{transform:scale(.97);}
+  .btn.primary{background:linear-gradient(135deg,var(--accent),#b0001f);color:#fff;box-shadow:0 8px 22px rgba(228,0,43,.45);}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);}
+  .btn.install{background:linear-gradient(135deg,#ff3b5c,#E4002B);color:#fff;display:none;}
+  .minirow{display:flex;gap:8px;margin-top:4px;}
+  a.mini{
+    flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+    text-decoration:none;color:var(--muted);
+    padding:10px 4px;border:1px solid var(--line);border-radius:12px;
+    font-size:10.5px;font-weight:600;transition:transform .12s ease, border-color .12s ease, color .12s ease;
+  }
+  a.mini:active{transform:scale(.96);}
+  a.mini:hover{color:var(--text);border-color:rgba(228,0,43,.5);}
+  a.mini .ic{width:20px;height:20px;}
+  .foot{text-align:center;color:var(--muted);font-size:11px;margin-top:16px;letter-spacing:.4px;}
+  svg.ic{width:18px;height:18px;fill:currentColor;flex:none;}
+
+  /* iOS install hint sheet */
+  .ios-hint{
+    position:fixed;left:0;right:0;bottom:0;z-index:5;
+    background:linear-gradient(180deg, rgba(20,20,20,.97), rgba(0,0,0,.98));
+    border-top:1px solid var(--line);
+    padding:18px 20px calc(20px + env(safe-area-inset-bottom));
+    transform:translateY(120%);transition:transform .35s cubic-bezier(.2,.8,.2,1);
+    text-align:center;font-size:14px;line-height:1.5;
+  }
+  .ios-hint.show{transform:none;}
+  .ios-hint b{color:var(--accent2);}
+  .ios-hint .x{position:absolute;top:10px;right:14px;color:var(--muted);font-size:20px;cursor:pointer;}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<main class="card">
+  <div class="brandbar">
+    <div class="company">
+      HITACHI
+      <small>India · R&amp;D</small>
+    </div>
+    <div class="tagline">Inspire the Next</div>
+  </div>
+
+  <div class="body">
+    <div class="top">
+      <div class="avatar">JY</div>
+      <div>
+        <h1>Jateen Yadav</h1>
+        <div class="role">Junior Research Engineer · Full-Stack Developer</div>
+        <div class="sub">Hitachi India R&amp;D · Gurugram</div>
+      </div>
+    </div>
+
+    <div class="summary">3+ yrs building React &amp; Node apps for enterprise — real-time dashboards, cross-platform mobile &amp; desktop.</div>
+
+    <div class="tags">
+      <span class="tag">React.js</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">Next.js</span>
+      <span class="tag">Flutter</span>
+      <span class="tag">Electron</span>
+      <span class="tag">MongoDB</span>
+      <span class="tag">Three.js</span>
+      <span class="tag">AWS</span>
+    </div>
+
+  <div class="qrwrap" id="qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path stroke="#0a0e17" d="M1 1.5h7m2 0h1m4 0h2m1 0h3m2 0h7M1 2.5h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h3m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m2 0h1m1 0h1m4 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m3 0h1m3 0h1m1 0h1m1 0h2m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m1 0h3m2 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m2 0h2m2 0h7m2 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 8.5h1m1 0h1m1 0h4m1 0h1M1 9.5h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h2m1 0h6m3 0h1m2 0h1M1 10.5h2m1 0h2m2 0h5m1 0h1m7 0h2m2 0h1m2 0h1M1 11.5h1m1 0h1m3 0h2m1 0h3m2 0h1m1 0h2m2 0h2m4 0h3M2 12.5h1m1 0h3m3 0h1m2 0h3m1 0h3m1 0h2m2 0h1m2 0h1M3 13.5h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h4m2 0h1m1 0h2M4 14.5h1m1 0h1m1 0h4m2 0h2m1 0h1m3 0h4m1 0h1m2 0h1M7 15.5h2m4 0h2m4 0h1m4 0h1m1 0h1m1 0h2M6 16.5h1m1 0h4m1 0h2m1 0h5m5 0h1m1 0h1M1 17.5h1m1 0h2m1 0h3m1 0h2m2 0h2m1 0h2m1 0h5m1 0h1m1 0h2M3 18.5h1m1 0h2m1 0h2m1 0h1m5 0h1m3 0h3m2 0h2m1 0h1M1 19.5h1m5 0h1m1 0h1m3 0h2m3 0h1m2 0h2m1 0h1m3 0h2M2 20.5h1m2 0h1m3 0h1m2 0h7m1 0h4m2 0h1m1 0h1M1 21.5h1m1 0h2m1 0h5m2 0h1m1 0h1m1 0h3m1 0h5M9 22.5h4m4 0h1m2 0h2m3 0h1m1 0h3M1 23.5h7m2 0h1m3 0h1m2 0h2m1 0h2m1 0h1m1 0h2m1 0h2M1 24.5h1m5 0h1m4 0h1m3 0h4m1 0h1m3 0h2M1 25.5h1m1 0h3m1 0h1m1 0h1m1 0h3m4 0h1m2 0h5M1 26.5h1m1 0h3m1 0h1m2 0h3m1 0h1m2 0h1m7 0h1m1 0h3M1 27.5h1m1 0h3m1 0h1m1 0h2m7 0h4m2 0h3m2 0h1M1 28.5h1m5 0h1m7 0h2m1 0h1m1 0h4m1 0h1m2 0h1M1 29.5h7m1 0h1m2 0h1m1 0h1m2 0h2m1 0h3m1 0h3m1 0h2"/></svg>
+  </div>
+  <div class="scan">Scan to connect on <b>LinkedIn</b></div>
+
+  <div class="btns">
+    <a class="btn primary" href="https://www.linkedin.com/in/jateen-yadav/" target="_blank" rel="noopener">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      Connect on LinkedIn
+    </a>
+    <a class="btn ghost" href="https://jateenyadav.netlify.app" target="_blank" rel="noopener">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.3-3.4A8 8 0 0 1 18.9 8zM12 4c.8 1.1 1.4 2.5 1.8 4h-3.6c.4-1.5 1-2.9 1.8-4zM4.3 14a8 8 0 0 1 0-4h3.4a17.6 17.6 0 0 0 0 4H4.3zm.8 2h3a15.7 15.7 0 0 0 1.3 3.4A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.3-3.4A15.7 15.7 0 0 0 8.1 8zM12 20c-.8-1.1-1.4-2.5-1.8-4h3.6c-.4 1.5-1 2.9-1.8 4zm2.3-6H9.7a15.5 15.5 0 0 1 0-4h4.6a15.5 15.5 0 0 1 0 4zm.6 5.4a15.7 15.7 0 0 0 1.3-3.4h3a8 8 0 0 1-4.3 3.4zM16.3 14a17.6 17.6 0 0 0 0-4h3.4a8 8 0 0 1 0 4h-3.4z"/></svg>
+      View Portfolio
+    </a>
+    <button class="btn install" id="installBtn">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-4.7 1.4-1.4L12 13.6V3h0zM5 19h14v2H5z"/></svg>
+      Install this app
+    </button>
+    <button class="btn ghost" id="saveContact">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      Save my contact
+    </button>
+
+    <div class="minirow">
+      <a class="mini" href="mailto:jateen.yadav@hitachi.co.in" title="Work email" aria-label="Work email">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>Work</span>
+      </a>
+      <a class="mini" href="mailto:jateen.yadav1@gmail.com" title="Personal email" aria-label="Personal email">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>Gmail</span>
+      </a>
+      <a class="mini" href="tel:+918398986788" title="Call" aria-label="Call">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2z"/></svg>
+        <span>Call</span>
+      </a>
+      <a class="mini" href="https://wa.me/918398986788" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.24-.12-1.4-.7-1.62-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06a6.5 6.5 0 0 1-3.24-2.84c-.24-.42.24-.39.7-1.3.08-.16 0-.3-.02-.42s-.54-1.3-.74-1.78c-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64 1.54.66 2.14.72 2.9.6.46-.06 1.4-.56 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="foot">Tap or scan · Installable PWA · Hitachi India R&amp;D</div>
+  </div>
+</main>
+
+<div class="ios-hint" id="iosHint">
+  <span class="x" id="iosClose">&times;</span>
+  Install on your iPhone: tap the <b>Share</b> icon below, then <b>“Add to Home Screen”</b>.
+</div>
+
+<script>
+/* ---- Save contact (vCard) ---- */
+document.getElementById('saveContact').addEventListener('click', function(){
+  var vcard =
+"BEGIN:VCARD\nVERSION:3.0\n" +
+"N:Yadav;Jateen;;;\n" +
+"FN:Jateen Yadav\n" +
+"ORG:Hitachi India Pvt. Ltd.;R&D\n" +
+"TITLE:Junior Research Engineer (Full-Stack Developer)\n" +
+"EMAIL;TYPE=WORK,PREF:jateen.yadav@hitachi.co.in\n" +
+"EMAIL;TYPE=HOME:jateen.yadav1@gmail.com\n" +
+"TEL;TYPE=CELL:+918398986788\n" +
+"ADR;TYPE=WORK:;;;Gurugram;;;India\n" +
+"URL:https://jateenyadav.netlify.app\n" +
+"URL;TYPE=LinkedIn:https://www.linkedin.com/in/jateen-yadav/\n" +
+"NOTE:Junior Research Engineer at Hitachi India R&D. Full-stack developer (React, Node, Flutter, Electron, Three.js).\n" +
+"END:VCARD";
+  var blob = new Blob([vcard], {type:'text/vcard'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'Jateen-Yadav.vcf';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){URL.revokeObjectURL(url);}, 1500);
+});
+
+/* ---- PWA install flow ---- */
+var deferredPrompt = null;
+var installBtn = document.getElementById('installBtn');
+
+function isStandalone(){
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+
+// Android / Chromium: capture the native install prompt
+window.addEventListener('beforeinstallprompt', function(e){
+  e.preventDefault();
+  deferredPrompt = e;
+  if(!isStandalone()) installBtn.style.display = 'flex';
+});
+
+installBtn.addEventListener('click', async function(){
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    installBtn.style.display = 'none';
+  }
+});
+
+window.addEventListener('appinstalled', function(){
+  installBtn.style.display = 'none';
+});
+
+// iOS Safari: no beforeinstallprompt — show the manual hint sheet once
+(function(){
+  var ua = window.navigator.userAgent;
+  var isIOS = /iphone|ipad|ipod/i.test(ua);
+  var isSafari = isIOS && /safari/i.test(ua) && !/crios|fxios/i.test(ua);
+  var hint = document.getElementById('iosHint');
+  if(isIOS && isSafari && !isStandalone()){
+    setTimeout(function(){ hint.classList.add('show'); }, 1200);
+  }
+  document.getElementById('iosClose').addEventListener('click', function(){
+    hint.classList.remove('show');
+  });
+})();
+
+/* ---- Register service worker ---- */
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(err){
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+</script>
+
+<!-- Three.js animated background (bundled locally for offline) -->
+<script src="assets/three.min.js"></script>
+<script>
+(function(){
+  var canvas = document.getElementById('bg');
+  if(typeof THREE === 'undefined'){
+    canvas.style.background = 'radial-gradient(600px 400px at 30% 20%, rgba(228,0,43,.28), transparent), radial-gradient(500px 500px at 80% 80%, rgba(255,59,92,.14), transparent)';
+    return;
+  }
+  var renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, .1, 100);
+  camera.position.z = 6;
+
+  var N = 900, geo = new THREE.BufferGeometry(), pos = new Float32Array(N*3);
+  for(var i=0;i<N*3;i++){ pos[i] = (Math.random()-.5)*18; }
+  geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  var mat = new THREE.PointsMaterial({size:.035, color:0xE4002B, transparent:true, opacity:.85});
+  var pts = new THREE.Points(geo, mat);
+  scene.add(pts);
+
+  var ico = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(2.1, 1),
+    new THREE.MeshBasicMaterial({color:0xff3b5c, wireframe:true, transparent:true, opacity:.30})
+  );
+  scene.add(ico);
+
+  function resize(){
+    camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  }
+  resize(); addEventListener('resize', resize);
+
+  var mx=0,my=0;
+  addEventListener('pointermove', function(e){ mx=(e.clientX/innerWidth-.5); my=(e.clientY/innerHeight-.5); });
+  addEventListener('deviceorientation', function(e){ if(e.gamma!=null){ mx=e.gamma/45; my=e.beta/90; }}, true);
+
+  function tick(t){
+    t*=0.001;
+    pts.rotation.y = t*0.05; pts.rotation.x = t*0.02;
+    ico.rotation.y = t*0.25; ico.rotation.x = t*0.15;
+    camera.position.x += (mx*1.4 - camera.position.x)*0.05;
+    camera.position.y += (-my*1.4 - camera.position.y)*0.05;
+    camera.lookAt(0,0,0);
+    renderer.render(scene,camera);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

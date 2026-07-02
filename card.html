@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jateen Yadav — Full-Stack Developer</title>
+<style>
+  :root{
+    --bg:#05070d;
+    --card:#0b1020;
+    --line:#1b2440;
+    --text:#eaf0ff;
+    --muted:#8ea0c8;
+    --accent:#4f8cff;
+    --accent2:#22e6c3;
+    --glow:0 0 40px rgba(79,140,255,.35);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{
+    background:radial-gradient(1200px 800px at 50% -10%, #10193a 0%, var(--bg) 60%);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:20px;
+  }
+  #bg{position:fixed;inset:0;z-index:0;opacity:.7;}
+  .card{
+    position:relative;z-index:1;
+    width:100%;max-width:400px;
+    background:linear-gradient(160deg, rgba(20,28,54,.92), rgba(9,13,28,.92));
+    border:1px solid var(--line);
+    border-radius:26px;
+    padding:30px 26px 26px;
+    box-shadow:var(--glow), 0 20px 60px rgba(0,0,0,.55);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    animation:rise .8s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(26px) scale(.98);}to{opacity:1;transform:none;}}
+  .top{display:flex;align-items:center;gap:16px;}
+  .avatar{
+    width:66px;height:66px;flex:none;border-radius:20px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    font-size:26px;font-weight:800;color:#05070d;letter-spacing:-1px;
+    box-shadow:0 8px 24px rgba(79,140,255,.4);
+  }
+  h1{font-size:24px;margin:0;letter-spacing:-.5px;line-height:1.1;}
+  .role{color:var(--accent2);font-weight:600;font-size:13.5px;margin-top:4px;letter-spacing:.3px;}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:2px;letter-spacing:1.5px;text-transform:uppercase;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px;}
+  .tag{
+    font-size:11.5px;font-weight:600;padding:6px 11px;border-radius:999px;
+    background:rgba(79,140,255,.12);border:1px solid rgba(79,140,255,.35);color:#bcd2ff;
+  }
+  .qrwrap{
+    margin:20px auto 8px;background:#fff;border-radius:18px;padding:14px;
+    width:190px;height:190px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+  }
+  .qrwrap svg{width:100%;height:100%;}
+  .scan{text-align:center;color:var(--muted);font-size:12px;letter-spacing:.5px;margin-bottom:18px;}
+  .scan b{color:var(--text);}
+  .btns{display:flex;flex-direction:column;gap:11px;}
+  a.btn,button.btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    text-decoration:none;border:none;cursor:pointer;
+    font-size:15px;font-weight:700;padding:14px;border-radius:14px;
+    transition:transform .12s ease, filter .12s ease;font-family:inherit;
+  }
+  a.btn:active,button.btn:active{transform:scale(.97);}
+  .btn.primary{background:linear-gradient(135deg,var(--accent),#2f6fe0);color:#fff;box-shadow:0 8px 22px rgba(79,140,255,.4);}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);}
+  .foot{text-align:center;color:var(--muted);font-size:11px;margin-top:16px;letter-spacing:.4px;}
+  svg.ic{width:18px;height:18px;fill:currentColor;flex:none;}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<main class="card">
+  <div class="top">
+    <div class="avatar">JY</div>
+    <div>
+      <h1>Jateen Yadav</h1>
+      <div class="role">Full-Stack Developer</div>
+      <div class="sub">Web · Mobile · Desktop · 3D</div>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">MERN</span>
+    <span class="tag">Flutter</span>
+    <span class="tag">Electron</span>
+    <span class="tag">Three.js</span>
+  </div>
+
+  <div class="qrwrap" id="qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path stroke="#0a0e17" d="M1 1.5h7m2 0h1m4 0h2m1 0h3m2 0h7M1 2.5h1m5 0h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h3m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m2 0h1m1 0h1m4 0h1m2 0h2m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m3 0h1m3 0h1m1 0h1m1 0h2m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m1 0h3m2 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m2 0h2m2 0h7m2 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 8.5h1m1 0h1m1 0h4m1 0h1M1 9.5h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h2m1 0h6m3 0h1m2 0h1M1 10.5h2m1 0h2m2 0h5m1 0h1m7 0h2m2 0h1m2 0h1M1 11.5h1m1 0h1m3 0h2m1 0h3m2 0h1m1 0h2m2 0h2m4 0h3M2 12.5h1m1 0h3m3 0h1m2 0h3m1 0h3m1 0h2m2 0h1m2 0h1M3 13.5h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h4m2 0h1m1 0h2M4 14.5h1m1 0h1m1 0h4m2 0h2m1 0h1m3 0h4m1 0h1m2 0h1M7 15.5h2m4 0h2m4 0h1m4 0h1m1 0h1m1 0h2M6 16.5h1m1 0h4m1 0h2m1 0h5m5 0h1m1 0h1M1 17.5h1m1 0h2m1 0h3m1 0h2m2 0h2m1 0h2m1 0h5m1 0h1m1 0h2M3 18.5h1m1 0h2m1 0h2m1 0h1m5 0h1m3 0h3m2 0h2m1 0h1M1 19.5h1m5 0h1m1 0h1m3 0h2m3 0h1m2 0h2m1 0h1m3 0h2M2 20.5h1m2 0h1m3 0h1m2 0h7m1 0h4m2 0h1m1 0h1M1 21.5h1m1 0h2m1 0h5m2 0h1m1 0h1m1 0h3m1 0h5M9 22.5h4m4 0h1m2 0h2m3 0h1m1 0h3M1 23.5h7m2 0h1m3 0h1m2 0h2m1 0h2m1 0h1m1 0h2m1 0h2M1 24.5h1m5 0h1m4 0h1m3 0h4m1 0h1m3 0h2M1 25.5h1m1 0h3m1 0h1m1 0h1m1 0h3m4 0h1m2 0h5M1 26.5h1m1 0h3m1 0h1m2 0h3m1 0h1m2 0h1m7 0h1m1 0h3M1 27.5h1m1 0h3m1 0h1m1 0h2m7 0h4m2 0h3m2 0h1M1 28.5h1m5 0h1m7 0h2m1 0h1m1 0h4m1 0h1m2 0h1M1 29.5h7m1 0h1m2 0h1m1 0h1m2 0h2m1 0h3m1 0h3m1 0h2"/></svg>
+  </div>
+  <div class="scan">Scan to connect on <b>LinkedIn</b></div>
+
+  <div class="btns">
+    <a class="btn primary" href="https://www.linkedin.com/in/jateen-yadav/" target="_blank" rel="noopener">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      Connect on LinkedIn
+    </a>
+    <button class="btn ghost" id="saveContact">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      Save my contact
+    </button>
+  </div>
+
+  <div class="foot">Tap or scan · Built with Three.js</div>
+</main>
+
+<script>
+/* vCard: save contact instantly (edit values below) */
+document.getElementById('saveContact').addEventListener('click', function(){
+  var vcard =
+"BEGIN:VCARD\nVERSION:3.0\n" +
+"N:Yadav;Jateen;;;\n" +
+"FN:Jateen Yadav\n" +
+"TITLE:Full-Stack Developer\n" +
+"URL:https://www.linkedin.com/in/jateen-yadav/\n" +
+"NOTE:MERN, Flutter, Electron, Three.js developer\n" +
+"END:VCARD";
+  var blob = new Blob([vcard], {type:'text/vcard'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'Jateen-Yadav.vcf';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){URL.revokeObjectURL(url);}, 1500);
+});
+</script>
+
+<!-- Three.js animated background with graceful fallback if offline -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var canvas = document.getElementById('bg');
+  if(typeof THREE === 'undefined'){
+    // Offline fallback: soft animated CSS gradient so it never looks broken
+    canvas.style.background = 'radial-gradient(600px 400px at 30% 20%, rgba(79,140,255,.25), transparent), radial-gradient(500px 500px at 80% 80%, rgba(34,230,195,.18), transparent)';
+    return;
+  }
+  var renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, .1, 100);
+  camera.position.z = 6;
+
+  // Particle field
+  var N = 900, geo = new THREE.BufferGeometry(), pos = new Float32Array(N*3);
+  for(var i=0;i<N*3;i++){ pos[i] = (Math.random()-.5)*18; }
+  geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  var mat = new THREE.PointsMaterial({size:.035, color:0x4f8cff, transparent:true, opacity:.85});
+  var pts = new THREE.Points(geo, mat);
+  scene.add(pts);
+
+  // Wireframe icosahedron (the "3D craft" nod)
+  var ico = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(2.1, 1),
+    new THREE.MeshBasicMaterial({color:0x22e6c3, wireframe:true, transparent:true, opacity:.28})
+  );
+  scene.add(ico);
+
+  function resize(){
+    camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  }
+  resize(); addEventListener('resize', resize);
+
+  var mx=0,my=0;
+  addEventListener('pointermove', function(e){ mx=(e.clientX/innerWidth-.5); my=(e.clientY/innerHeight-.5); });
+  addEventListener('deviceorientation', function(e){ if(e.gamma!=null){ mx=e.gamma/45; my=e.beta/90; }}, true);
+
+  function tick(t){
+    t*=0.001;
+    pts.rotation.y = t*0.05; pts.rotation.x = t*0.02;
+    ico.rotation.y = t*0.25; ico.rotation.x = t*0.15;
+    camera.position.x += (mx*1.4 - camera.position.x)*0.05;
+    camera.position.y += (-my*1.4 - camera.position.y)*0.05;
+    camera.lookAt(0,0,0);
+    renderer.render(scene,camera);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
