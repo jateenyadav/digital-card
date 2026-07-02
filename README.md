@@ -3,7 +3,7 @@
 An installable **Progressive Web App** digital business card, styled in the Hitachi corporate identity.
 Built for quick, professional networking — scan the QR to connect on LinkedIn, tap to save contact, or install it to your phone's home screen.
 
-**Live demo:** _add your deployed URL here (e.g. https://jateen-card.netlify.app)_
+**Live demo:** https://jateenyadav.github.io/digital-card/
 
 ## Features
 
