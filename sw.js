@@ -1,9 +1,10 @@
-const CACHE = 'jateen-card-v4-hitachi';
+const CACHE = 'jateen-card-v5-hitachi';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
   './assets/three.min.js',
+  './assets/qr-photo.png',
   './assets/icon-192.png',
   './assets/icon-512.png',
   './assets/icon-maskable-512.png',
