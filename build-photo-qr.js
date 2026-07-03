@@ -2,7 +2,7 @@ const QRCode = require('qrcode');
 const sharp = require('sharp');
 const jsQR = require('jsqr');
 
-const URL = 'https://www.linkedin.com/in/jateen-yadav/';
+const URL = 'https://www.linkedin.com/in/jateen-yadav?fromQR=1';
 const PORTRAIT = 'assets/portrait.png';
 const OUT = 'assets/qr-photo.png';
 
