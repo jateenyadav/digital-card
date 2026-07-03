@@ -32,26 +32,23 @@
   html,body{margin:0;height:100%;}
   body{
     background:radial-gradient(1200px 800px at 50% -10%, #2a0810 0%, var(--bg) 55%);
-    background-attachment:fixed;
     color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     min-height:100dvh;
     display:flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content:center;
-    overflow-x:hidden;
-    overflow-y:auto;
-    padding:calc(20px + env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom));
+    overflow:hidden;
+    padding:calc(12px + env(safe-area-inset-top)) 16px calc(12px + env(safe-area-inset-bottom));
   }
   #bg{position:fixed;inset:0;z-index:0;opacity:.45;}
   .card{
     position:relative;z-index:1;
     width:100%;max-width:400px;
-    margin:auto;
     background:linear-gradient(160deg, rgba(26,26,26,.94), rgba(8,8,8,.94));
     border:1px solid var(--line);
     border-radius:26px;
-    padding:0 0 26px;
+    padding:0 0 18px;
     overflow:hidden;
     box-shadow:var(--glow), 0 20px 60px rgba(0,0,0,.6);
     backdrop-filter:blur(14px);
@@ -62,44 +59,44 @@
   /* Hitachi red header band */
   .brandbar{
     display:flex;align-items:center;justify-content:space-between;
-    padding:12px 20px;
+    padding:10px 20px;
     background:linear-gradient(90deg,var(--accent),#b0001f);
     color:#fff;font-weight:800;font-size:15px;letter-spacing:.5px;
   }
   .brandbar .company{display:flex;flex-direction:column;line-height:1.05;}
   .brandbar .company small{font-weight:600;font-size:10px;letter-spacing:2px;opacity:.9;text-transform:uppercase;}
   .brandbar .tagline{font-size:10.5px;font-weight:600;font-style:italic;opacity:.95;letter-spacing:.3px;}
-  .body{padding:22px 26px 0;}
+  .body{padding:16px 26px 0;}
   .top{display:flex;align-items:center;gap:16px;}
   .avatar{
-    width:66px;height:66px;flex:none;border-radius:18px;
+    width:60px;height:60px;flex:none;border-radius:16px;
     background:linear-gradient(135deg,var(--accent),#b0001f);
     display:flex;align-items:center;justify-content:center;
-    font-size:26px;font-weight:800;color:#fff;letter-spacing:-1px;
+    font-size:24px;font-weight:800;color:#fff;letter-spacing:-1px;
     box-shadow:0 8px 24px rgba(228,0,43,.45);
   }
-  h1{font-size:24px;margin:0;letter-spacing:-.5px;line-height:1.1;}
+  h1{font-size:23px;margin:0;letter-spacing:-.5px;line-height:1.1;}
   .role{color:var(--accent2);font-weight:700;font-size:13.5px;margin-top:4px;letter-spacing:.3px;}
   .sub{color:var(--muted);font-size:12px;margin-top:2px;letter-spacing:1.2px;text-transform:uppercase;}
-  .summary{color:#cfcfd6;font-size:12.5px;line-height:1.5;margin:16px 0 2px;}
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px;}
+  .summary{color:#cfcfd6;font-size:12.5px;line-height:1.4;margin:10px 0 2px;}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 2px;}
   .tag{
-    font-size:11.5px;font-weight:600;padding:6px 11px;border-radius:999px;
+    font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;
     background:rgba(228,0,43,.12);border:1px solid rgba(228,0,43,.4);color:#ffb3c0;
   }
   .qrwrap{
-    margin:20px auto 8px;background:#0a0a0a;border-radius:18px;padding:8px;overflow:hidden;
-    width:230px;height:230px;display:flex;align-items:center;justify-content:center;
+    margin:14px auto 6px;background:#0a0a0a;border-radius:18px;padding:8px;overflow:hidden;
+    width:210px;height:210px;display:flex;align-items:center;justify-content:center;
     box-shadow:0 10px 30px rgba(0,0,0,.5);border:1px solid var(--line);box-sizing:border-box;
   }
   .qrwrap svg,.qrwrap img{width:100%;height:100%;display:block;object-fit:contain;}
-  .scan{text-align:center;color:var(--muted);font-size:12px;letter-spacing:.5px;margin-bottom:18px;}
+  .scan{text-align:center;color:var(--muted);font-size:12px;letter-spacing:.5px;margin-bottom:12px;}
   .scan b{color:var(--text);}
-  .btns{display:flex;flex-direction:column;gap:11px;}
+  .btns{display:flex;flex-direction:column;gap:9px;}
   a.btn,button.btn{
     display:flex;align-items:center;justify-content:center;gap:9px;
     text-decoration:none;border:none;cursor:pointer;
-    font-size:15px;font-weight:700;padding:14px;border-radius:14px;
+    font-size:15px;font-weight:700;padding:12px;border-radius:14px;
     transition:transform .12s ease, filter .12s ease;font-family:inherit;
   }
   a.btn:active,button.btn:active{transform:scale(.97);}
@@ -116,7 +113,7 @@
   a.mini:active{transform:scale(.96);}
   a.mini:hover{color:var(--text);border-color:rgba(228,0,43,.5);}
   a.mini .ic{width:20px;height:20px;}
-  .foot{text-align:center;color:var(--muted);font-size:11px;margin-top:16px;letter-spacing:.4px;}
+  .foot{text-align:center;color:var(--muted);font-size:11px;margin-top:12px;letter-spacing:.4px;}
   svg.ic{width:18px;height:18px;fill:currentColor;flex:none;}
 
   /* iOS install hint sheet */
@@ -169,7 +166,7 @@
     </div>
 
   <div class="qrwrap" id="qr">
-    <img src="assets/qr-photo.png" alt="Scan the QR to connect on LinkedIn" width="230" height="230" />
+    <img src="assets/qr-photo.png" alt="Scan the QR to connect on LinkedIn" width="210" height="210" />
   </div>
   <div class="scan">Scan to connect on <b>LinkedIn</b></div>
 
