@@ -1,4 +1,4 @@
-const CACHE = 'jateen-card-v5-hitachi';
+const CACHE = 'jateen-card-v6-hitachi';
 const ASSETS = [
   './',
   './index.html',
